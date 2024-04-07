@@ -15,8 +15,8 @@ body {
   width: min(80vh, 80vw);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  row-gap: 20px;
-  column-gap: 20px;
+  row-gap: 15px;
+  column-gap: 15px;
 }
 
 .button {
@@ -65,7 +65,7 @@ body {
   width: min(20vh, 20vw);
 
   line-height: min(20vh, 20vw);
-  font-size: 1.2em;
+  font-size: clamp(0.4rem, 2.5vw, 1.2rem);
   font-weight: bold;
   text-align: center;
 
