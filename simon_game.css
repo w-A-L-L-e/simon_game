@@ -1,0 +1,92 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+.row {
+  width: 500px;
+  margin: auto;
+}
+
+.btn {
+  float: left;
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  border: 1px solid black;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+} 
+
+
+/* green */
+#btn1 {
+  background-color: #269f26;
+}
+.active#btn1 {
+  background-color: #06ff06;
+}
+
+/* red */
+#btn2 {
+  background-color: #a61b1b;
+  /*background-color: #ae1d1d;*/
+}
+.active#btn2 {
+  background-color: #ff0000;
+}
+
+
+/* yellow */
+#btn3 {
+  background-color: #a89200;
+}
+.active#btn3 {
+  background-color: #ffdd00;
+}
+
+#btn4 {
+  background-color: #0b47a8;
+}
+.active#btn4 {
+  background-color: #0062ff;
+}
+
+#bad_click {
+  display: none;
+  text-align: center;
+  position: fixed;
+  left: 20%;
+  top: 20px;
+  font-size: 50px;
+  z-index: 2000;
+  padding: 20px;
+  border: 2px solid red;
+  border-radius: 20px;
+  background-color: black;
+  color: red;
+}
+
+#bad_click img {
+  /*width: 380px;*/
+  height: 500px;
+}
+
+#start_button {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: -0px;
+  position: fixed;
+  top: 185px;
+  left: 545px;
+  border-radius: 15px;
+  border: 2px solid white;
+  width: 100px;
+  height: 55px;
+  background-color: black;
+}
+
+#main {
+  margin-top: 30px;
+}
