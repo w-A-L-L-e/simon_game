@@ -11,4 +11,3 @@ Just open index.html and click start button to start playing.
 
 ![Game start](screenshots/game_start_example.png?raw=true "Game initial page")
 
-![Game playing](screenshots/game_playing_example.png?raw=true "Game playing")
