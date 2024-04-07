@@ -9,3 +9,6 @@ and animations all work nicely.
 Just open index.html and click start button to start playing.
 
 
+![Game start](/assets/game_start_example.png?raw=true "Game initial page")
+
+![Game playing](/assets/game_playing_example.png?raw=true "Game playing")
