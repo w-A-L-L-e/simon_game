@@ -121,7 +121,7 @@ async function youFailed(){
 let allow_clicking = false;
 async function buttonClick(pos){
   if (seq_len == 0) {
-    seq_len = 1;
+    startClicked();
     return;
   }
 
