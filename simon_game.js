@@ -5,6 +5,7 @@
 // The existing apps in appstore all had anoying adds so rick rolled
 // a quick vanilla js version of my own.
 //
+
 let seq = [
   0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
   0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -14,6 +15,10 @@ let seq = [
 
 let seq_len = 0;
 let click_count = 0;
+let speed = 1200;
+let wait_for_clicks = true;
+let playing = false;
+let allow_clicking = false;
 
 async function play_sound(mp3_file){
   console.log("playing ", mp3_file);
@@ -26,6 +31,7 @@ async function play_sound(mp3_file){
 function rand() {
   return Math.floor(Math.random()*4) + 1;
 }
+
 
 async function sleep(ms) {
   return new Promise((resolve) => {
@@ -43,6 +49,7 @@ function initSequence() {
   console.log("simon game sequence=", seq);
 }
 
+
 function setButton(div_id, led_on){
   let btn_div = document.getElementById(div_id);
   if (!btn_div) return;
@@ -54,6 +61,7 @@ function setButton(div_id, led_on){
     btn_div.classList.remove("active");
   }
 }
+
 
 async function blink(pos, speed=2000){
   if (speed>2000) speed = 1500;
@@ -75,15 +83,18 @@ async function blink(pos, speed=2000){
   await sleep(blink_ms);
 }
 
+
 function showDiv(div_id){
   let div = document.getElementById(div_id);
   div.style.display = "block";
 }
 
+
 function hideDiv(div_id){
   let div = document.getElementById(div_id);
   div.style.display = "none";
 }
+
 
 function showScore(){
   let score = seq_len - 1;
@@ -93,13 +104,13 @@ function showScore(){
   btn.innerHTML = "SCORE: " + score;
 }
 
+
 function showStart(){
    let btn = document.getElementById("start_button");
   btn.innerHTML = "START";
 }
 
 
-let playing = false;
 function restartGame(){
   click_count = 0;
   initSequence();
@@ -118,7 +129,7 @@ async function youFailed(){
   restartGame(); 
 }
 
-let allow_clicking = false;
+
 async function buttonClick(pos){
   if (seq_len == 0) {
     startClicked();
@@ -159,8 +170,7 @@ function startClicked(){
   restartGame();
 }
 
-let speed = 1200;
-let wait_for_clicks = true;
+
 async function loop(){
   if (wait_for_clicks || seq_len == 0) return;
 
@@ -184,4 +194,6 @@ async function main(){
   }, 500);
 }
 
+// normally do this on some dom ready event
+// however for this simple page just loading the js at end also works here
 main();
