@@ -8,6 +8,7 @@ and animations all work nicely.
 
 Just open index.html and click start button to start playing.
 
-
 ![Game start](screenshots/game_start_example.png?raw=true "Game initial page")
 
+
+The game is also hosted here now: https://walter.schreppers.com/simon/index.hml
