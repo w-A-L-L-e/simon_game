@@ -6,9 +6,8 @@ It's so simple I thought why not make it ourselves. And so we did in a few hours
 The assets are downloaded randomly from the net and the css is definately not fit for all screen sizes but the game mechanics and sounds
 and animations all work nicely. 
 
-Just open index.html and click start button to start playing.
 
 ![Game start](screenshots/game_start_example.png?raw=true "Game initial page")
 
 
-The game is also hosted here now: https://walter.schreppers.com/simon/index.hml
+You can play the simon game here now: https://walter.schreppers.com/simon/index.html
