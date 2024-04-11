@@ -88,10 +88,10 @@ body {
   position: absolute;
   height: min(80vh, 80vw);
   aspect-ratio: 1;
-  left: calc(49% - min(80vh, 80vw)/2);
+  left: calc(40% - min(80vh, 80vw)/2);
 
   text-align: center;
-  font-size: 50px;
+  font-size: 40px;
   z-index: 2000;
   padding: 20px;
   border-radius: 20px;

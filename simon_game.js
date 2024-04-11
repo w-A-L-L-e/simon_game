@@ -21,6 +21,11 @@ let playing = false;
 let allow_clicking = false;
 
 async function play_sound(mp3_file){
+  if (window.navigator.userAgent.includes("iPhone OS")){
+    console.log("WARNING: skip broken webkit audio play on iOS. file=", mp3_file);
+    return;
+  }
+
   var audio = new Audio("assets/" + mp3_file);
   audio.volume = 0.9;
   var promise = audio.play();
