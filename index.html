@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
+  
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="simon_game.css">
-</head>
-<body>
-  <h1>Simon Game</h1>
-  <div class="game">
-    <div class="start-button" id="start_button" onclick="startClicked()">
-      START
+  </head>
+
+  <body>
+    <h1>Simon Game</h1>
+    <div class="game">
+      <div class="start-button" id="start_button" onclick="startClicked()">
+        START
+      </div>
+
+      <div id="bad_click">
+        Game Over! <br/>
+        <img src="assets/fail.png"/>
+      </div>
+
+      <div class="button-grid">
+        <div class="button" id="btn1" onclick="buttonClick(1)"></div>
+        <div class="button" id="btn2" onclick="buttonClick(2)"></div>
+        <div class="button" id="btn3" onclick="buttonClick(3)"></div>
+        <div class="button" id="btn4" onclick="buttonClick(4)"></div>
+      </div>
     </div>
 
-    <div id="bad_click">
-      Game Over! <br/>
-      <img src="assets/fail.png"/>
-    </div>
+    <script src="simon_game.js"></script>
+  </body>
 
-    <div class="button-grid">
-      <div class="button" id="btn1" onclick="buttonClick(1)"></div>
-      <div class="button" id="btn2" onclick="buttonClick(2)"></div>
-      <div class="button" id="btn3" onclick="buttonClick(3)"></div>
-      <div class="button" id="btn4" onclick="buttonClick(4)"></div>
-    </div>
-  </div>
-
-  <script src="simon_game.js"></script>
-</body>
 </html>
-

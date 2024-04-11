@@ -1,10 +1,10 @@
-// ========================== Simon Game ======================
-// Author: Walter Schreppers
-// About: Written during my holiday for Noah Schreppers my son
-// who liked the game and wanted to play it on his tablet.
-// The existing apps in appstore all had anoying adds so rick rolled
-// a quick vanilla js version of my own.
-//
+// ========================== Simon Game ======================================
+// Author:  Walter Schreppers
+// About:   Written during my holiday for Noah Schreppers my son
+//          who liked the game and wanted to play it on his tablet.
+//          The existing apps in appstore all had anoying adds so
+//          I quickly programmed a plain js version of my own.
+// ============================================================================
 
 let seq = [
   0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -21,10 +21,17 @@ let playing = false;
 let allow_clicking = false;
 
 async function play_sound(mp3_file){
-  console.log("playing ", mp3_file);
   var audio = new Audio("assets/" + mp3_file);
   audio.volume = 0.9;
-  audio.play();
+  var promise = audio.play();
+
+  if (promise !== undefined) {
+      promise.catch(error => {
+        console.log("ERROR: play of sound ", mp3_file, "not allowed");
+      }).then(() => {
+        console.log("playing ", mp3_file);
+      });
+  }
 }
 
 
@@ -101,7 +108,7 @@ function showScore(){
   if (score<0) score = 0;
 
   let btn = document.getElementById("start_button");
-  btn.innerHTML = "SCORE: " + score;
+  btn.innerHTML = "SCORE " + score;
 }
 
 
@@ -117,6 +124,7 @@ function restartGame(){
   seq_len = 1;
   wait_for_clicks = false;
 }
+
 
 async function youFailed(){
   console.log("YOU FAILED");
@@ -137,8 +145,8 @@ async function buttonClick(pos){
   }
 
   if (!allow_clicking) return;
-  allow_clicking = false;
 
+  allow_clicking = false;
   await blink(pos, 1800);
 
   if (seq[click_count] == pos) {
@@ -165,7 +173,6 @@ function startClicked(){
   if(playing) return;
 
   showScore();
-
   playing = true;
   restartGame();
 }
@@ -174,6 +181,7 @@ function startClicked(){
 async function loop(){
   if (wait_for_clicks || seq_len == 0) return;
 
+  console.log("drawing next animation...");
   wait_for_clicks = true;
   allow_clicking = false;
   for(let pos = 0; pos < seq_len; pos++) {
@@ -194,6 +202,4 @@ async function main(){
   }, 500);
 }
 
-// normally do this on some dom ready event
-// however for this simple page just loading the js at end also works here
 main();
